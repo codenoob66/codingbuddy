@@ -18,7 +18,7 @@ root = tk.Tk()
 root.title("One.com AI")
 root.geometry("500x400")
 root.configure(bg="#000000")  # Dark stylish background
-root.iconbitmap("oneai.ico")
+root.iconbitmap(resource_path("oneai.ico"))  # ← use this
 
 # Fonts and colors
 font_text = ("Helvetica", 12)
