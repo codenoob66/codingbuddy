@@ -1,16 +1,24 @@
 from google import genai
 from dotenv import load_dotenv
-import tkinter as tk
+import os, sys, tkinter  as tk
 import threading
+
 
 # Load env and initialize client once
 load_dotenv()
 client = genai.Client()
 
+def resource_path(filename):
+    # Works both during dev and when compiled
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, filename)
+    return os.path.join(os.path.abspath("."), filename)
+
 root = tk.Tk()
 root.title("One.com AI")
 root.geometry("500x400")
 root.configure(bg="#000000")  # Dark stylish background
+root.iconbitmap("oneai.ico")
 
 # Fonts and colors
 font_text = ("Helvetica", 12)
